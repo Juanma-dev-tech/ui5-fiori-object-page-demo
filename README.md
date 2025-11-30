@@ -125,10 +125,14 @@ Useful for:
 
 ---
 
-## 📸 Screenshot (optional)
+## 🔍 Screenshots
 
-Add a screenshot to `docs/screenshot.png` and reference it:
+### 🖼️ Screenshot 1 — Header & Overall Status
+![Screenshot 1](screenshots/screenshot1.png)
 
-```md
-![Object Page Screenshot](docs/screenshot.png)
+### 🖼️ Screenshot 2 — General Information & Items Table
+![Screenshot 2](screenshots/screenshot2.png)
+
+### 🖼️ Screenshot 3 — Delivery, Billing & History
+![Screenshot 3](screenshots/screenshot3.png)
 ```
