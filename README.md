@@ -1,30 +1,37 @@
 # UI5 Fiori Object Page Demo
 
-Demo de una **SAP Fiori Object Page** desarrollada con SAPUI5.  
-Muestra el detalle de un **Sales Order** con secciones, tablas, formatters y un badge de estado (“Overall Status”).
+![UI5](https://img.shields.io/badge/SAPUI5-Object%20Page-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Project-Demo-orange)
+![Platform](https://img.shields.io/badge/Frontend-XML%20Views-lightgrey)
+![Model](https://img.shields.io/badge/Model-JSONModel-yellow)
 
-> Proyecto de práctica dentro del roadmap hacia la certificación **SAP Certified Development Associate – SAP Fiori Application Developer**.
+A demo SAPUI5 application showcasing a complete **Fiori Object Page** for displaying Sales Order details.  
+Includes structured sections, table bindings, formatters, header content, and status visualization.
+
+> Part of a structured learning roadmap for the **SAP Certified Development Associate – SAP Fiori Application Developer** certification.
 
 ---
 
-## 🧱 Tecnologías y conceptos usados
+## 🧱 Technologies & Concepts Used
 
 - **SAPUI5 / OpenUI5**
 - **XML Views** (`App.view.xml`, `ObjectPage.view.xml`)
-- **Object Page Layout** (`sap.uxap.ObjectPageLayout` + `ObjectPageHeader`)
-- **Modelos JSON** (`JSONModel` + `model/data.json`)
-- **Data binding**
+- **Object Page Floorplan**  
+  (`sap.uxap.ObjectPageLayout`, `ObjectPageHeader`, `ObjectPageHeaderContent`)
+- **JSON Models** (`JSONModel` + `/model/data.json`)
+- **Data Binding**
   - Property binding
   - Aggregation binding (`Table`, `List`)
-- **Formatters personalizados** (`model/formatter.js`)
-  - Formateo de fechas
-  - Montos con moneda (formato `es-AR`)
-  - Cantidad + unidad
-  - Mapeo de `Status` → `ObjectStatus.state` (Success, Warning, Error, etc.)
+- **Custom Formatters** (`/model/formatter.js`)
+  - Date formatting
+  - Currency formatting
+  - Quantity + Unit
+  - Status → UI5 semantic state mapping (Success, Warning, Error, etc.)
 
 ---
 
-## 📂 Estructura del proyecto
+## 📂 Project Structure
 
 ```text
 ui5-fiori-object-page-demo
@@ -33,12 +40,12 @@ ui5-fiori-object-page-demo
 │  │  ├─ App.controller.js
 │  │  └─ ObjectPage.controller.js
 │  ├─ model
-│  │  ├─ data.json          # Datos mock del Sales Order
-│  │  └─ models.js          # Creación de JSONModel
-│  │  └─ formatter.js       # Formatters usados en la vista
+│  │  ├─ data.json          # Mock Sales Order data
+│  │  ├─ models.js          # JSONModel loader
+│  │  └─ formatter.js       # Formatters used in the view
 │  ├─ view
-│  │  ├─ App.view.xml       # Raíz: contiene el <App id="app"/>
-│  │  └─ ObjectPage.view.xml# Vista principal Object Page
+│  │  ├─ App.view.xml       # Root <App> control
+│  │  └─ ObjectPage.view.xml# Main Object Page view
 │  ├─ Component.js
 │  ├─ index.html
 │  └─ manifest.json
@@ -47,61 +54,81 @@ ui5-fiori-object-page-demo
 
 ---
 
-## ▶ Cómo ejecutar el proyecto
+## ▶ Running the Project
 
-### Requisitos
+### Requirements
 
-- Node.js (>= 20.11 recomendado)
-- `@ui5/cli` instalada globalmente
+- Node.js (20.x recommended)
+- UI5 CLI
+
+Install UI5 CLI:
 
 ```bash
 npm install -g @ui5/cli
 ```
 
-### Instalar dependencias (solo una vez):
+Install project dependencies:
 
 ```bash
 npm install
 ```
 
-### Levantar el servidor de desarrollo:
+Start the local development server:
 
 ```bash
 npx ui5 serve -o index.html
 ```
 
-La app estará disponible en:
+The application will be available at:
 
 **http://localhost:8080/index.html**
 
 ---
 
-## 🧾 Funcionalidad
+## 🧾 Features
 
-- Muestra el detalle de un **Sales Order**.
-- Secciones:
-  - **General Information** (`SimpleForm`)
-  - **Items** (`m:Table`)
+- Full **Fiori Object Page** implementation
+- Header content with:
+  - Title
+  - Subtitle
+  - Action buttons
+  - Overall Status badge using formatter
+- Sections:
+  - **General Information**
+  - **Items Table**
   - **Delivery & Billing**
-  - **History** (`m:List`)
-- **Overall Status** con estado visual según formatter.
-- Formateo:
-  - Montos → `Intl.NumberFormat("es-AR")`
-  - Fechas ISO → formato local
+  - **History**
+- Formatters for:
+  - Currency (Intl.NumberFormat, locale `es-AR`)
+  - ISO dates → local date format
   - Quantity + Unit
+  - Status → Semantic UI5 State
 
 ---
 
-## 🎯 Objetivo de aprendizaje
+## 🎯 Learning Objectives
 
-Este proyecto sirve para:
+This project demonstrates:
 
-- Practicar el **floorplan Object Page** de Fiori.
-- Reforzar:
-  - estructura de un proyecto UI5,
-  - uso de modelos y binding,
-  - creación y uso de formatters,
-  - diseño de vistas XML más complejas.
+- How to create a structured SAPUI5 application
+- Use of Fiori floorplans (Object Page)
+- Working with JSON models
+- Clean XML view development
+- Custom formatters
+- Data binding best practices
+
+Useful for:
+
+- Building a UI5 portfolio
+- Practicing for the **Fiori Developer certification**
+- Understanding real-world Fiori Object Page development patterns
 
 ---
 
+## 📸 Screenshot (optional)
+
+Add a screenshot to `docs/screenshot.png` and reference it:
+
+```md
+![Object Page Screenshot](docs/screenshot.png)
+```
