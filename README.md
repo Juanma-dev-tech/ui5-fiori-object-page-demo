@@ -125,14 +125,14 @@ Useful for:
 
 ---
 
-## 🔍 Screenshots
+## 📸 Screenshots
 
 ### 🖼️ Screenshot 1 — Header & Overall Status
-![Screenshot 1](screenshots/screenshot 1.png)
+![Screenshot 1](screenshots/screenshot_1.png)
 
 ### 🖼️ Screenshot 2 — General Information & Items Table
-![Screenshot 2](screenshots/screenshot 2.png)
+![Screenshot 2](screenshots/screenshot_2.png)
 
 ### 🖼️ Screenshot 3 — Delivery, Billing & History
-![Screenshot 3](screenshots/screenshot 3.png)
+![Screenshot 3](screenshots/screenshot_3.png)
 ```
