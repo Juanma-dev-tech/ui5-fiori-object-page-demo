@@ -1,0 +1,226 @@
+<mvc:View
+  controllerName="ui5fiori.objectpage.demo.controller.ObjectPage"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.uxap"
+  xmlns:m="sap.m"
+  xmlns:f="sap.ui.layout.form">
+
+  <ObjectPageLayout
+    id="ObjectPageLayout"
+    showTitleInHeaderContent="false">
+
+    <!-- HEADER TITLE -->
+    <headerTitle>
+      <ObjectPageHeader
+        objectTitle="Sales Order {SalesOrderId}"
+        objectSubtitle="{CustomerName}"
+        isObjectTitleAlwaysVisible="true">
+
+        <actions>
+          <m:Button text="Edit" type="Emphasized" />
+          <m:Button text="Block" />
+          <m:Button icon="sap-icon://overflow" tooltip="More" />
+        </actions>
+
+      </ObjectPageHeader>
+    </headerTitle>
+
+    <!-- HEADER CONTENT (badge de estado) -->
+    <headerContent>
+      <ObjectPageHeaderContent>
+        <content>
+          <m:ObjectStatus
+            title="Overall Status"
+            text="{Status}"
+            state="{ path: 'Status', formatter: '.formatter.statusState' }"
+          />
+        </content>
+      </ObjectPageHeaderContent>
+    </headerContent>
+
+    <!-- SECTIONS -->
+    <sections>
+
+      <!-- General Information -->
+      <ObjectPageSection title="General Information">
+        <subSections>
+          <ObjectPageSubSection>
+            <blocks>
+              <f:SimpleForm
+                editable="false"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3" labelSpanL="3" labelSpanM="4"
+                emptySpanXL="0" emptySpanL="0" emptySpanM="0"
+                columnsXL="2" columnsL="2" columnsM="1">
+
+                <m:Label text="Sales Order" />
+                <m:Text text="{SalesOrderId}" />
+
+                <m:Label text="Customer ID" />
+                <m:Text text="{CustomerId}" />
+
+                <m:Label text="Customer Name" />
+                <m:Text text="{CustomerName}" />
+
+                <m:Label text="Sales Org" />
+                <m:Text text="{SalesOrg}" />
+
+                <m:Label text="Distr. Channel" />
+                <m:Text text="{DistributionChannel}" />
+
+                <m:Label text="Division" />
+                <m:Text text="{Division}" />
+
+                <m:Label text="Created On" />
+                <m:Text
+                  text="{
+                    path: 'CreatedOn',
+                    formatter: '.formatter.dateFromISO'
+                  }" />
+
+                <m:Label text="Net Amount" />
+                <m:Text
+                  text="{
+                    parts: [
+                      { path: 'NetAmount' },
+                      { path: 'Currency' }
+                    ],
+                    formatter: '.formatter.amountWithCurrency'
+                  }" />
+
+              </f:SimpleForm>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>
+      </ObjectPageSection>
+
+      <!-- Items -->
+      <ObjectPageSection title="Items">
+        <subSections>
+          <ObjectPageSubSection>
+            <blocks>
+              <m:Table items="{Items}">
+                <m:columns>
+                  <m:Column><m:Text text="Item" /></m:Column>
+                  <m:Column><m:Text text="Material" /></m:Column>
+                  <m:Column><m:Text text="Description" /></m:Column>
+                  <m:Column><m:Text text="Quantity" /></m:Column>
+                  <m:Column><m:Text text="Price" /></m:Column>
+                  <m:Column><m:Text text="Net Value" /></m:Column>
+                </m:columns>
+
+                <m:items>
+                  <m:ColumnListItem>
+                    <m:cells>
+
+                      <!-- Item -->
+                      <m:Text text="{Item}" />
+
+                      <!-- Material -->
+                      <m:Text text="{Material}" />
+
+                      <!-- Description -->
+                      <m:Text text="{Description}" />
+
+                      <!-- QUANTITY with unit -->
+                      <m:Text
+                        text="{
+                          parts: [
+                            { path: 'Quantity' },
+                            { path: 'Unit' }
+                          ],
+                          formatter: '.formatter.quantityWithUnit'
+                        }" />
+
+                      <!-- PRICE formatted -->
+                      <m:Text
+                        text="{
+                          parts: [
+                            { path: 'Price' },
+                            { path: 'Currency' }
+                          ],
+                          formatter: '.formatter.amountWithCurrency'
+                        }" />
+
+                      <!-- NET VALUE formatted -->
+                      <m:Text
+                        text="{
+                          parts: [
+                            { path: 'NetValue' },
+                            { path: 'Currency' }
+                          ],
+                          formatter: '.formatter.amountWithCurrency'
+                        }" />
+
+                    </m:cells>
+                  </m:ColumnListItem>
+                </m:items>
+              </m:Table>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>
+      </ObjectPageSection>
+
+      <!-- Delivery & Billing -->
+      <ObjectPageSection title="Delivery &amp; Billing">
+        <subSections>
+          <ObjectPageSubSection>
+            <blocks>
+              <f:SimpleForm
+                editable="false"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3" labelSpanL="3" labelSpanM="4"
+                emptySpanXL="0" emptySpanL="0" emptySpanM="0"
+                columnsXL="2" columnsL="2" columnsM="1">
+
+                <!-- Delivery -->
+                <m:Title text="Delivery" level="H5" />
+                <m:Label text="Delivery Date" />
+                <m:Text text="{Delivery/DeliveryDate}" />
+
+                <m:Label text="Delivery Status" />
+                <m:Text text="{Delivery/DeliveryStatus}" />
+
+                <m:Label text="Shipping Point" />
+                <m:Text text="{Delivery/ShippingPoint}" />
+
+                <m:Label text="Incoterms" />
+                <m:Text text="{Delivery/Incoterms}" />
+
+                <!-- Billing -->
+                <m:Title text="Billing" level="H5" />
+                <m:Label text="Billing Status" />
+                <m:Text text="{Billing/BillingStatus}" />
+
+                <m:Label text="Payment Terms" />
+                <m:Text text="{Billing/PaymentTerms}" />
+
+                <m:Label text="Billing Block" />
+                <m:Text text="{Billing/BillingBlock}" />
+
+              </f:SimpleForm>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>
+      </ObjectPageSection>
+
+      <!-- History -->
+      <ObjectPageSection title="History">
+        <subSections>
+          <ObjectPageSubSection>
+            <blocks>
+              <m:List items="{History}">
+                <m:StandardListItem
+                  title="{Date} - {User}"
+                  description="{Text}"
+                  icon="sap-icon://history" />
+              </m:List>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>
+      </ObjectPageSection>
+
+    </sections>
+
+  </ObjectPageLayout>
+</mvc:View>

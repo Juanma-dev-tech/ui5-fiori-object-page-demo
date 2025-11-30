@@ -1,0 +1,59 @@
+{
+  "SalesOrder": {
+    "SalesOrderId": "5000001234",
+    "CustomerId": "100078",
+    "CustomerName": "TechStore SA",
+    "SalesOrg": "1000",
+    "DistributionChannel": "10",
+    "Division": "00",
+    "CreatedOn": "2025-11-30",
+    "NetAmount": 1250000,
+    "Currency": "ARS",
+    "Status": "In Process",
+    "Items": [
+      {
+        "Item": "10",
+        "Material": "MAT-1000",
+        "Description": "Notebook Lenovo 14''",
+        "Quantity": 2,
+        "Unit": "UN",
+        "Price": 500000,
+        "NetValue": 1000000,
+        "Currency": "ARS"
+      },
+      {
+        "Item": "20",
+        "Material": "MAT-2000",
+        "Description": "Mouse inalámbrico",
+        "Quantity": 5,
+        "Unit": "UN",
+        "Price": 50000,
+        "NetValue": 250000,
+        "Currency": "ARS"
+      }
+    ],
+    "Delivery": {
+      "DeliveryDate": "2025-12-05",
+      "DeliveryStatus": "Scheduled",
+      "ShippingPoint": "SP01",
+      "Incoterms": "EXW"
+    },
+    "Billing": {
+      "BillingStatus": "Pending",
+      "PaymentTerms": "NET30",
+      "BillingBlock": "None"
+    },
+    "History": [
+      {
+        "Date": "2025-11-28",
+        "User": "SD_USER",
+        "Text": "Sales order created"
+      },
+      {
+        "Date": "2025-11-29",
+        "User": "SD_USER",
+        "Text": "Delivery scheduled"
+      }
+    ]
+  }
+}

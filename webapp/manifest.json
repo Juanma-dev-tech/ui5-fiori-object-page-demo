@@ -1,0 +1,30 @@
+{
+  "sap.app": {
+    "id": "ui5fiori.objectpage.demo",
+    "type": "application",
+    "title": "UI5 Fiori Object Page Demo",
+    "description": "Demo de Object Page escalable con SAPUI5",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "ui5fiori.objectpage.demo.view.ObjectPage",
+      "type": "XML",
+      "async": true,
+      "id": "ObjectPage"
+    },
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": {
+        "sap.m": {},
+        "sap.uxap": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    }
+  }
+}
