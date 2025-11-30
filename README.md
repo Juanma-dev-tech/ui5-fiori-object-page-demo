@@ -128,11 +128,11 @@ Useful for:
 ## 🔍 Screenshots
 
 ### 🖼️ Screenshot 1 — Header & Overall Status
-![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 1](screenshots/screenshot 1.png)
 
 ### 🖼️ Screenshot 2 — General Information & Items Table
-![Screenshot 2](screenshots/screenshot2.png)
+![Screenshot 2](screenshots/screenshot 2.png)
 
 ### 🖼️ Screenshot 3 — Delivery, Billing & History
-![Screenshot 3](screenshots/screenshot3.png)
+![Screenshot 3](screenshots/screenshot 3.png)
 ```
